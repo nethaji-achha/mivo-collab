@@ -1,0 +1,36 @@
+{
+  "name": "mivo-collab-monorepo",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Mivo Collab — Production-grade Communication and Collaboration SaaS Platform",
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "scripts": {
+    "dev": "concurrently -n \"web,api,signaling,worker\" -c \"cyan,green,magenta,yellow\" \"npm run dev:web\" \"npm run dev:api\" \"npm run dev:signaling\" \"npm run dev:worker\"",
+    "dev:all": "concurrently -n \"web,api,signaling,worker\" -c \"cyan,green,magenta,yellow\" \"npm run dev:web\" \"npm run dev:api\" \"npm run dev:signaling\" \"npm run dev:worker\"",
+    "dev:web": "npm run dev --workspace=@mivo/web",
+    "dev:api": "npm run dev --workspace=@mivo/api",
+    "dev:signaling": "npm run dev --workspace=@mivo/signaling",
+    "dev:worker": "npm run dev --workspace=@mivo/worker",
+    "build": "npm run build --workspaces --if-present",
+    "test": "npm run test --workspaces --if-present",
+    "lint": "npm run lint --workspaces --if-present",
+    "typecheck": "npm run typecheck --workspaces --if-present"
+  },
+  "keywords": [
+    "webrtc",
+    "collaboration",
+    "video-conferencing",
+    "saas",
+    "mivo-collab",
+    "hyperdevelopers"
+  ],
+  "author": "HyperDevelopers",
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "concurrently": "^10.0.5",
+    "typescript": "^5.4.5"
+  }
+}

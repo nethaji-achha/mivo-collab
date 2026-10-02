@@ -1,0 +1,145 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 158.1 64.4% 51.6%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 160 84% 39%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 142.1 76.2% 36.3%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 158.1 64.4% 51.6%;
+  }
+
+  body {
+    @apply bg-white text-slate-900 font-sans antialiased selection:bg-mivo-500 selection:text-white;
+    min-height: 100vh;
+    overflow-x: hidden;
+    background-color: #ffffff;
+    color: #0f172a;
+  }
+}
+
+/* Base Light Mode Text & Surface Normalization */
+.bg-dark-bg {
+  background-color: #ffffff !important;
+}
+
+.bg-dark-card {
+  background-color: #ffffff !important;
+  border-color: rgba(0, 0, 0, 0.08) !important;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.04), 0 1px 2px -1px rgba(0, 0, 0, 0.04);
+}
+
+.bg-dark-surface {
+  background-color: #f8fafc !important;
+  border-color: rgba(0, 0, 0, 0.08) !important;
+}
+
+/* Light Mode Border Overrides */
+.border-white\/5,
+.border-white\/10,
+.border-white\/15,
+.border-white\/20 {
+  border-color: rgba(0, 0, 0, 0.08) !important;
+}
+
+/* Light Mode Background Overrides */
+.bg-white\/5 {
+  background-color: rgba(0, 0, 0, 0.03) !important;
+}
+.bg-white\/10 {
+  background-color: rgba(0, 0, 0, 0.06) !important;
+}
+.bg-white\/20 {
+  background-color: rgba(0, 0, 0, 0.09) !important;
+}
+
+/* Light Mode Typography Adjustments */
+h1, h2, h3, h4, h5, h6 {
+  color: #0f172a;
+}
+
+.text-slate-100,
+.text-slate-200 {
+  color: #1e293b !important;
+}
+
+.text-slate-300 {
+  color: #334155 !important;
+}
+
+.text-slate-400 {
+  color: #64748b !important;
+}
+
+.text-slate-500 {
+  color: #94a3b8 !important;
+}
+
+/* Standalone text-white on light cards inverted to dark, while keeping white on colored badges/buttons */
+h1.text-white,
+h2.text-white,
+h3.text-white,
+h4.text-white,
+p.text-white,
+span.text-white:not([class*="bg-mivo"]):not([class*="bg-emerald"]):not([class*="bg-rose"]):not([class*="bg-amber"]):not([class*="bg-cyan"]):not([class*="bg-blue"]):not([class*="bg-slate-900"]):not([class*="bg-black"]):not([class*="bg-gradient"]),
+div.text-white:not([class*="bg-mivo"]):not([class*="bg-emerald"]):not([class*="bg-rose"]):not([class*="bg-amber"]):not([class*="bg-cyan"]):not([class*="bg-blue"]):not([class*="bg-slate-900"]):not([class*="bg-black"]):not([class*="bg-gradient"]) {
+  color: #0f172a;
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(16, 185, 129, 0.4);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(16, 185, 129, 0.8);
+}
+
+/* Glassmorphism Classes for Light Theme */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.9) !important;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(0, 0, 0, 0.08) !important;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.85) !important;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(0, 0, 0, 0.06) !important;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.03);
+}
+
+.glass-card:hover {
+  border-color: rgba(16, 185, 129, 0.4) !important;
+  box-shadow: 0 10px 30px -10px rgba(16, 185, 129, 0.15) !important;
+}
+
+.gradient-glow {
+  background: radial-gradient(circle at 50% 0%, rgba(16, 185, 129, 0.12) 0%, transparent 70%);
+}
